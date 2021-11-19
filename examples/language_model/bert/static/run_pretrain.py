@@ -155,11 +155,13 @@ def parse_args():
         default=1,
         help="Number of merge steps before gradient update."
         "global_batch_size = gradient_merge_steps * batch_size.")
-    parser.add_argument("--use_cuda_graph",
+    # cuda graph
+    parser.add_argument(
+        "--use_cuda_graph",
+        type=distutils.util.strtobool,
         default=False,
-        action='store_true',
-        help="Enable CUDA graph execution.")
-
+        help="Whether to use cuda_graph.")
+    
     args = parser.parse_args()
     return args
 
@@ -221,6 +223,13 @@ def dist_optimizer(args, optimizer):
 
     dist_strategy = fleet.DistributedStrategy()
     dist_strategy.execution_strategy = exec_strategy
+    
+    # cuda graph
+    if args.use_cuda_graph:
+        build_strategy.allow_cuda_graph_capture = True
+        build_strategy.fix_op_run_order = True
+        build_strategy.fuse_all_optimizer_ops = True
+
     dist_strategy.build_strategy = build_strategy
 
     dist_strategy.fuse_grad_size_in_MB = 16
@@ -275,7 +284,12 @@ def do_train(args):
 
     worker_num = fleet.worker_num()
     worker_index = fleet.worker_index()
-
+    if args.use_cuda_graph:
+        paddle.set_flags({
+                    'FLAGS_allocator_strategy': 'auto_growth',
+                    'FLAGS_sync_nccl_allreduce': False,
+                    'FLAGS_cudnn_deterministic': True
+                })
     # Create the random seed for the worker
     set_seed(args.seed)
     worker_init = WorkerInitObj(args.seed + worker_index)
@@ -344,7 +358,7 @@ def do_train(args):
     if args.use_amp:
         optimizer.amp_init(place)
     
-    # ------------------- use the cuda graph
+    # cuda graph
     if args.use_cuda_graph:
         scope = paddle.static.global_scope()
         for data in data_holders:
@@ -393,22 +407,28 @@ def do_train(args):
                 reader_cost_avg.record(train_reader_cost)
                 global_step += 1
                 train_start = time.time()
-
-                if arg.use_cuda_graph:
+                print(batch)
+                # use cuda graph
+                if args.use_cuda_graph:
                     if graph is not None:
-                       input_tensor_var._copy_from()
-                       graph.replay() 
-                else:
-                    if step == capture_step_id:
-                        batch = None
-                        graph = CUDAGraph(place, mode="global")
-                        graph.capture_begin()
-                    loss_return = exe.run(main_program,
-                                      feed=batch,
-                                      fetch_list=[loss])
-                    if step == capture_step_id:
-                        graph.capture_end()
+                        input_name = [input.name for input in data_holders]
+                        for idx in range(len(input_tensor_var)):
+                            input_tensor_var[idx].set_lod(batch[0][input_name[idx]].lod())
                         graph.replay()
+                       
+                    else:
+                        if step == capture_batch_id:
+                            input_name = [input.name for input in data_holders]
+                            for idx in range(len(input_tensor_var)):
+                                input_tensor_var[idx].set_lod(batch[0][input_name[idx]].lod())
+                            batch = None
+                            graph = CUDAGraph()
+                            graph.capture_begin()
+                        loss_return = exe.run(main_program,
+                                      feed=batch)
+                        if step == capture_batch_id:
+                            graph.capture_end()
+                            graph.replay()
                 else:
                     loss_return = exe.run(main_program,
                                       feed=batch,

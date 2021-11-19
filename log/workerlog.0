@@ -1,0 +1,1182 @@
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=32, device='gpu', enable_addto=False, gradient_merge_steps=2112, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 09:23:19,830] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 09:23:20.756354   191 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 09:23:20.762385   191 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 469, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 407, in do_train
+    if arg.use_cuda_graph:
+NameError: name 'arg' is not defined
+
+
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+No stack trace in paddle, may be caused by external reasons.
+
+----------------------
+Error Message Summary:
+----------------------
+FatalError: `Termination signal` is detected by the operating system.
+  [TimeInfo: *** Aborted at 1637313819 (unix time) try "date -d @1637313819" if you are using GNU date ***]
+  [SignalInfo: *** SIGTERM (@0x72) received by PID 191 (TID 0x7fa507185740) from PID 114 ***]
+
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=32, device='gpu', enable_addto=False, gradient_merge_steps=2112, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 09:24:16,177] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 09:24:17.099206   340 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 09:24:17.104722   340 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 469, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 413, in do_train
+    if step == capture_step_id:
+NameError: name 'capture_step_id' is not defined
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=32, device='gpu', enable_addto=False, gradient_merge_steps=2112, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 09:25:26,807] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 09:25:27.729272   486 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 09:25:27.734882   486 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+W1119 09:25:43.099342   486 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 469, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 418, in do_train
+    loss_return = exe.run(main_program,
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1259, in run
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.8/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1247, in run
+    return self._run_impl(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1366, in _run_impl
+    program._graph._compile(scope, self.place)
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/compiler.py", line 464, in _compile
+    self._executor = self._compile_data_parallel(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/compiler.py", line 411, in _compile_data_parallel
+    return core.ParallelExecutor(
+ValueError: (InvalidArgument) FLAGS_sync_nccl_allreduce must be False to support CUDA Graph capturing.
+  [Hint: Expected FLAGS_sync_nccl_allreduce == false, but received FLAGS_sync_nccl_allreduce:1 != false:0.] (at /work/Code/Paddle/paddle/fluid/framework/parallel_executor.cc:1635)
+
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=32, device='gpu', enable_addto=False, gradient_merge_steps=2112, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 09:29:50,440] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 09:29:51.364176   632 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 09:29:51.370180   632 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+W1119 09:30:06.765727   632 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 474, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 419, in do_train
+    input_tensor_var._copy_from(batch[0],place)
+AttributeError: 'list' object has no attribute '_copy_from'
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=32, device='gpu', enable_addto=False, gradient_merge_steps=2112, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 09:31:21,892] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 09:31:22.819164   784 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 09:31:22.825115   784 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f0f93fb06f0>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7f0f93fb0870>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7f0f93fa25b0>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f0f93fa20b0>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7f0f93fa2bf0>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f0f93fac3f0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f0f93facaf0>}]
+W1119 09:31:38.027550   784 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f0f9009fdf0>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7f0f9009f970>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7f0f9009f930>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f0f9009f8b0>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7f0f9009f830>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f0f9009f7f0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f0f9009f7b0>}]
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 474, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 419, in do_train
+    input_tensor_var._copy_from(batch[0],place)
+AttributeError: 'list' object has no attribute '_copy_from'
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=32, device='gpu', enable_addto=False, gradient_merge_steps=2112, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 09:54:16,671] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 09:54:17.605849   933 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 09:54:17.611732   933 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fb2cc984eb0>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7fb2cc98d630>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7fb2cc98d1b0>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fb2cc9a6870>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7fb2cc9a63b0>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fb2cc9a6730>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fb2cc9a6630>}]
+W1119 09:54:32.691442   933 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fb26d15feb0>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7fb26d15f930>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7fb26d15f8f0>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fb26d15f870>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7fb26d15f7f0>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fb26d15f7b0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fb26d15f770>}]
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 478, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 423, in do_train
+    input_tensor_var[idx]._copy_from(batch[0][input_name[idx]],place)
+TypeError: _copy_from(): incompatible function arguments. The following argument types are supported:
+    1. (self: paddle.fluid.core_avx.Tensor, tensor: paddle.fluid.core_avx.Tensor, place: paddle::platform::Place, batch_size: int = -1) -> None
+
+Invoked with: <paddle.fluid.core_avx.LoDTensor object at 0x7fb2cc988b30>, <paddle.fluid.core_avx.LoDTensor object at 0x7fb26d15f870>, CUDAPlace(0)
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=32, device='gpu', enable_addto=False, gradient_merge_steps=2112, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 09:59:16,510] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 09:59:17.432154  1082 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 09:59:17.437721  1082 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f1ac5f84b70>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7f1ac5f84470>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7f1ac5f86370>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f1ac5f866f0>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7f1ac5f3ce70>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f1ac5f3c9f0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f1ac5f3cb70>}]
+W1119 09:59:32.514650  1082 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f1a6d53fe30>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7f1a6d53f930>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7f1a6d53f8f0>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f1a6d53f870>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7f1a6d53f7f0>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f1a6d53f7b0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f1a6d53f770>}]
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 478, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 423, in do_train
+    input_tensor_var[idx].set_lod(batch[0][input_name[idx]],place)
+TypeError: set_lod(): incompatible function arguments. The following argument types are supported:
+    1. (self: paddle.fluid.core_avx.LoDTensor, lod: List[List[int]]) -> None
+
+Invoked with: <paddle.fluid.core_avx.LoDTensor object at 0x7f1ac7101fb0>, <paddle.fluid.core_avx.LoDTensor object at 0x7f1a6d53f870>, CUDAPlace(0)
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=32, device='gpu', enable_addto=False, gradient_merge_steps=2112, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 10:02:03,053] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 10:02:03.991575  1231 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 10:02:03.997558  1231 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f40704a63b0>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7f40704a6730>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7f4070454630>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f40704549b0>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7f4070454a30>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f4070454430>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f4070454bb0>}]
+W1119 10:02:19.330020  1231 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f3fee5bfe30>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7f3fee5bf930>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7f3fee5bf8f0>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f3fee5bf870>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7f3fee5bf7f0>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f3fee5bf7b0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f3fee5bf770>}]
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 478, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 427, in do_train
+    loss_return = exe.run(main_program,
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1259, in run
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.8/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1247, in run
+    return self._run_impl(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1370, in _run_impl
+    return self._run_parallel(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1062, in _run_parallel
+    tensors = exe.run(fetch_var_names, return_merged)._move_to_list()
+ValueError: (InvalidArgument) Cannot fetch data when using CUDA Graph.
+  [Hint: Expected fetch_tensors.empty() == true, but received fetch_tensors.empty():0 != true:1.] (at /work/Code/Paddle/paddle/fluid/framework/parallel_executor.cc:896)
+
+terminate called after throwing an instance of 'paddle::platform::EnforceNotMet'
+  what():  (External) CUDA error(900), operation not permitted when stream is capturing. 
+  [Hint: 'cudaErrorStreamCaptureUnsupported'. The operation is not permitted when the stream is capturing. ] (at /work/Code/Paddle/paddle/fluid/platform/stream/cuda_stream.cc:92)
+
+
+
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+0   paddle::framework::ParallelExecutor::~ParallelExecutor()
+
+----------------------
+Error Message Summary:
+----------------------
+FatalError: `Process abort signal` is detected by the operating system.
+  [TimeInfo: *** Aborted at 1637316144 (unix time) try "date -d @1637316144" if you are using GNU date ***]
+  [SignalInfo: *** SIGABRT (@0x4cf) received by PID 1231 (TID 0x7f40b5b17740) from PID 1231 ***]
+
+  File "./examples/language_model/bert/static/run_pretrain.py", line 417
+    print(input_tensor_var)
+                          ^
+IndentationError: unindent does not match any outer indentation level
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=32, device='gpu', enable_addto=False, gradient_merge_steps=2112, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 10:04:01,652] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 10:04:02.623610  1509 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 10:04:02.629796  1509 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fc3b7c4ba70>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7fc3b7c4b9b0>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7fc3b7c4b870>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fc3b7caea70>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7fc3b7cb13f0>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fc3b7cb1c30>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fc3b7cb1770>}]
+W1119 10:04:17.855285  1509 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fc360b9fe30>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7fc360b9f930>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7fc360b9f8f0>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fc360b9f870>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7fc360b9f7f0>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fc360b9f7b0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fc360b9f770>}]
+[<paddle.fluid.core_avx.LoDTensor object at 0x7fc3b7c66bf0>, <paddle.fluid.core_avx.LoDTensor object at 0x7fc3b7c711b0>, <paddle.fluid.core_avx.LoDTensor object at 0x7fc3b7c71c70>, <paddle.fluid.core_avx.LoDTensor object at 0x7fc3b7c710b0>, <paddle.fluid.core_avx.LoDTensor object at 0x7fc3b7c06230>, <paddle.fluid.core_avx.LoDTensor object at 0x7fc3b7c060b0>, <paddle.fluid.core_avx.LoDTensor object at 0x7fc3b7c06530>]
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 480, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 429, in do_train
+    loss_return = exe.run(main_program,
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1259, in run
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.8/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1247, in run
+    return self._run_impl(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1370, in _run_impl
+    return self._run_parallel(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1062, in _run_parallel
+    tensors = exe.run(fetch_var_names, return_merged)._move_to_list()
+ValueError: (InvalidArgument) Cannot fetch data when using CUDA Graph.
+  [Hint: Expected fetch_tensors.empty() == true, but received fetch_tensors.empty():0 != true:1.] (at /work/Code/Paddle/paddle/fluid/framework/parallel_executor.cc:896)
+
+terminate called after throwing an instance of 'paddle::platform::EnforceNotMet'
+  what():  (External) CUDA error(900), operation not permitted when stream is capturing. 
+  [Hint: 'cudaErrorStreamCaptureUnsupported'. The operation is not permitted when the stream is capturing. ] (at /work/Code/Paddle/paddle/fluid/platform/stream/cuda_stream.cc:92)
+
+
+
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+0   paddle::framework::ParallelExecutor::~ParallelExecutor()
+
+----------------------
+Error Message Summary:
+----------------------
+FatalError: `Process abort signal` is detected by the operating system.
+  [TimeInfo: *** Aborted at 1637316263 (unix time) try "date -d @1637316263" if you are using GNU date ***]
+  [SignalInfo: *** SIGABRT (@0x5e5) received by PID 1509 (TID 0x7fc40d321740) from PID 1509 ***]
+
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=32, device='gpu', enable_addto=False, gradient_merge_steps=2112, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 10:05:02,274] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 10:05:03.206707  1658 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 10:05:03.212466  1658 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+W1119 10:05:18.427624  1658 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+[<paddle.fluid.core_avx.LoDTensor object at 0x7f73307307b0>, <paddle.fluid.core_avx.LoDTensor object at 0x7f7330730730>, <paddle.fluid.core_avx.LoDTensor object at 0x7f73307301f0>, <paddle.fluid.core_avx.LoDTensor object at 0x7f7330730030>, <paddle.fluid.core_avx.LoDTensor object at 0x7f7330730170>, <paddle.fluid.core_avx.LoDTensor object at 0x7f7330730570>, <paddle.fluid.core_avx.LoDTensor object at 0x7f7330730db0>]
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 480, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 429, in do_train
+    loss_return = exe.run(main_program,
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1259, in run
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.8/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1247, in run
+    return self._run_impl(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1370, in _run_impl
+    return self._run_parallel(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1062, in _run_parallel
+    tensors = exe.run(fetch_var_names, return_merged)._move_to_list()
+ValueError: (InvalidArgument) Cannot fetch data when using CUDA Graph.
+  [Hint: Expected fetch_tensors.empty() == true, but received fetch_tensors.empty():0 != true:1.] (at /work/Code/Paddle/paddle/fluid/framework/parallel_executor.cc:896)
+
+terminate called after throwing an instance of 'paddle::platform::EnforceNotMet'
+  what():  (External) CUDA error(900), operation not permitted when stream is capturing. 
+  [Hint: 'cudaErrorStreamCaptureUnsupported'. The operation is not permitted when the stream is capturing. ] (at /work/Code/Paddle/paddle/fluid/platform/stream/cuda_stream.cc:92)
+
+
+
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+0   paddle::framework::ParallelExecutor::~ParallelExecutor()
+
+----------------------
+Error Message Summary:
+----------------------
+FatalError: `Process abort signal` is detected by the operating system.
+  [TimeInfo: *** Aborted at 1637316323 (unix time) try "date -d @1637316323" if you are using GNU date ***]
+  [SignalInfo: *** SIGABRT (@0x67a) received by PID 1658 (TID 0x7f7375e4b740) from PID 1658 ***]
+
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=32, device='gpu', enable_addto=False, gradient_merge_steps=2112, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 10:06:30,411] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 10:06:31.452960  1807 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 10:06:31.465891  1807 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+W1119 10:06:46.739053  1807 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+capture tensor: [<paddle.fluid.core_avx.LoDTensor object at 0x7f44e49bfc30>, <paddle.fluid.core_avx.LoDTensor object at 0x7f44e4955c70>, <paddle.fluid.core_avx.LoDTensor object at 0x7f44e4955d30>, <paddle.fluid.core_avx.LoDTensor object at 0x7f44e49552b0>, <paddle.fluid.core_avx.LoDTensor object at 0x7f44e49550f0>, <paddle.fluid.core_avx.LoDTensor object at 0x7f44e4955170>, <paddle.fluid.core_avx.LoDTensor object at 0x7f44e49556b0>]
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 480, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 429, in do_train
+    loss_return = exe.run(main_program,
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1259, in run
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.8/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1247, in run
+    return self._run_impl(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1370, in _run_impl
+    return self._run_parallel(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1062, in _run_parallel
+    tensors = exe.run(fetch_var_names, return_merged)._move_to_list()
+ValueError: (InvalidArgument) Cannot fetch data when using CUDA Graph.
+  [Hint: Expected fetch_tensors.empty() == true, but received fetch_tensors.empty():0 != true:1.] (at /work/Code/Paddle/paddle/fluid/framework/parallel_executor.cc:896)
+
+terminate called after throwing an instance of 'paddle::platform::EnforceNotMet'
+  what():  (External) CUDA error(900), operation not permitted when stream is capturing. 
+  [Hint: 'cudaErrorStreamCaptureUnsupported'. The operation is not permitted when the stream is capturing. ] (at /work/Code/Paddle/paddle/fluid/platform/stream/cuda_stream.cc:92)
+
+
+
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+0   paddle::framework::ParallelExecutor::~ParallelExecutor()
+
+----------------------
+Error Message Summary:
+----------------------
+FatalError: `Process abort signal` is detected by the operating system.
+  [TimeInfo: *** Aborted at 1637316411 (unix time) try "date -d @1637316411" if you are using GNU date ***]
+  [SignalInfo: *** SIGABRT (@0x70f) received by PID 1807 (TID 0x7f453a075740) from PID 1807 ***]
+
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=32, device='gpu', enable_addto=False, gradient_merge_steps=2112, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 10:12:18,743] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 10:12:19.743793  1956 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 10:12:19.749372  1956 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+W1119 10:12:34.796717  1956 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+capture tensor: [<paddle.fluid.core_avx.LoDTensor object at 0x7fd2e0bbf8b0>, <paddle.fluid.core_avx.LoDTensor object at 0x7fd2e0bbf1f0>, <paddle.fluid.core_avx.LoDTensor object at 0x7fd2e0bbf9b0>, <paddle.fluid.core_avx.LoDTensor object at 0x7fd2e0bbf030>, <paddle.fluid.core_avx.LoDTensor object at 0x7fd2e0bbf170>, <paddle.fluid.core_avx.LoDTensor object at 0x7fd2e0bbf7b0>, <paddle.fluid.core_avx.LoDTensor object at 0x7fd2e0bbf330>]
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 480, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 429, in do_train
+    loss_return = exe.run(main_program,
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1259, in run
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.8/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1247, in run
+    return self._run_impl(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1370, in _run_impl
+    return self._run_parallel(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1062, in _run_parallel
+    tensors = exe.run(fetch_var_names, return_merged)._move_to_list()
+ValueError: (InvalidArgument) Cannot fetch data when using CUDA Graph.
+  [Hint: Expected fetch_tensors.empty() == true, but received fetch_tensors.empty():0 != true:1.] (at /work/Code/Paddle/paddle/fluid/framework/parallel_executor.cc:896)
+
+terminate called after throwing an instance of 'paddle::platform::EnforceNotMet'
+  what():  (External) CUDA error(900), operation not permitted when stream is capturing. 
+  [Hint: 'cudaErrorStreamCaptureUnsupported'. The operation is not permitted when the stream is capturing. ] (at /work/Code/Paddle/paddle/fluid/platform/stream/cuda_stream.cc:92)
+
+
+
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+0   paddle::framework::ParallelExecutor::~ParallelExecutor()
+
+----------------------
+Error Message Summary:
+----------------------
+FatalError: `Process abort signal` is detected by the operating system.
+  [TimeInfo: *** Aborted at 1637316759 (unix time) try "date -d @1637316759" if you are using GNU date ***]
+  [SignalInfo: *** SIGABRT (@0x7a4) received by PID 1956 (TID 0x7fd3222d5740) from PID 1956 ***]
+
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=32, device='gpu', enable_addto=False, gradient_merge_steps=2112, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 10:13:36,329] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 10:13:37.246526  2105 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 10:13:37.251996  2105 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+W1119 10:13:52.395318  2105 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 480, in <module>
+  File "./examples/language_model/bert/static/run_pretrain.py", line 429, in do_train
+    feed=batch,
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1259, in run
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.8/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1247, in run
+    return self._run_impl(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1370, in _run_impl
+    return self._run_parallel(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1062, in _run_parallel
+    tensors = exe.run(fetch_var_names, return_merged)._move_to_list()
+ValueError: (InvalidArgument) Cannot fetch data when using CUDA Graph.
+  [Hint: Expected fetch_tensors.empty() == true, but received fetch_tensors.empty():0 != true:1.] (at /work/Code/Paddle/paddle/fluid/framework/parallel_executor.cc:896)
+
+terminate called after throwing an instance of 'paddle::platform::EnforceNotMet'
+  what():  (External) CUDA error(900), operation not permitted when stream is capturing. 
+  [Hint: 'cudaErrorStreamCaptureUnsupported'. The operation is not permitted when the stream is capturing. ] (at /work/Code/Paddle/paddle/fluid/platform/stream/cuda_stream.cc:92)
+
+
+
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+0   paddle::framework::ParallelExecutor::~ParallelExecutor()
+
+----------------------
+Error Message Summary:
+----------------------
+FatalError: `Process abort signal` is detected by the operating system.
+  [TimeInfo: *** Aborted at 1637316837 (unix time) try "date -d @1637316837" if you are using GNU date ***]
+  [SignalInfo: *** SIGABRT (@0x839) received by PID 2105 (TID 0x7ff7f7149740) from PID 2105 ***]
+
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=32, device='gpu', enable_addto=False, gradient_merge_steps=2112, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 10:14:38,417] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 10:14:39.404515  2254 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 10:14:39.410692  2254 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+W1119 10:14:54.728554  2254 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 480, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 429, in do_train
+    loss_return = exe.run(main_program,
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1259, in run
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.8/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1247, in run
+    return self._run_impl(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1370, in _run_impl
+    return self._run_parallel(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1062, in _run_parallel
+    tensors = exe.run(fetch_var_names, return_merged)._move_to_list()
+ValueError: (InvalidArgument) Cannot fetch data when using CUDA Graph.
+  [Hint: Expected fetch_tensors.empty() == true, but received fetch_tensors.empty():0 != true:1.] (at /work/Code/Paddle/paddle/fluid/framework/parallel_executor.cc:896)
+
+terminate called after throwing an instance of 'paddle::platform::EnforceNotMet'
+  what():  (External) CUDA error(900), operation not permitted when stream is capturing. 
+  [Hint: 'cudaErrorStreamCaptureUnsupported'. The operation is not permitted when the stream is capturing. ] (at /work/Code/Paddle/paddle/fluid/platform/stream/cuda_stream.cc:92)
+
+
+
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+0   paddle::framework::ParallelExecutor::~ParallelExecutor()
+
+----------------------
+Error Message Summary:
+----------------------
+FatalError: `Process abort signal` is detected by the operating system.
+  [TimeInfo: *** Aborted at 1637316899 (unix time) try "date -d @1637316899" if you are using GNU date ***]
+  [SignalInfo: *** SIGABRT (@0x8ce) received by PID 2254 (TID 0x7fb4e1701740) from PID 2254 ***]
+
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=32, device='gpu', enable_addto=False, gradient_merge_steps=2112, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 10:16:10,771] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 10:16:11.781585  2403 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 10:16:11.787324  2403 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+W1119 10:16:27.989683  2403 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+W1119 10:16:38.316131  2422 operator.cc:250] fused_attention raises an exception paddle::memory::allocation::BadAlloc, ResourceExhaustedError: 
+
+Out of memory error on GPU 0. Cannot allocate 144.000000MB memory on GPU 0, 39.487305GB memory has been allocated and available memory is only 101.187500MB.
+
+Please check whether there is any other process using GPU 0.
+1. If yes, please stop them, or start PaddlePaddle on another GPU.
+2. If no, please decrease the batch size of your model. 
+
+ (at /work/Code/Paddle/paddle/fluid/memory/allocation/cuda_allocator.cc:79)
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 480, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 429, in do_train
+    loss_return = exe.run(main_program,
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1259, in run
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.8/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1247, in run
+    return self._run_impl(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1370, in _run_impl
+    return self._run_parallel(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1062, in _run_parallel
+    tensors = exe.run(fetch_var_names, return_merged)._move_to_list()
+RuntimeError: ResourceExhaustedError: 
+
+Out of memory error on GPU 0. Cannot allocate 144.000000MB memory on GPU 0, 39.487305GB memory has been allocated and available memory is only 101.187500MB.
+
+Please check whether there is any other process using GPU 0.
+1. If yes, please stop them, or start PaddlePaddle on another GPU.
+2. If no, please decrease the batch size of your model. 
+
+ (at /work/Code/Paddle/paddle/fluid/memory/allocation/cuda_allocator.cc:79)
+
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=1, device='gpu', enable_addto=False, gradient_merge_steps=67584, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 10:18:43,241] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 10:18:44.168238  2601 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 10:18:44.174077  2601 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+W1119 10:18:59.825867  2601 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+  - place: CUDAPlace(0)
+  - shape: [1, 512]
+  - layout: NCHW
+  - format: undef
+  - dtype: int64_t
+  - data: [101 103 10024 2594 103 1010 1999 103 5337 3168 103 2089 103 9530 3367 28551 2000 4088 1999 1996 2338 1997 103 1010 3127 2322 1010 2007 1996 2616 2045 103 3423 5784 2040 103 2008 1996 2002 10024 2594 2375 2038 5201 2000 1996 2530 3423 2458 2004 2464 1999 1996 3732 1005 1055 5038 2008 2158 1011 2081 2375 2442 2507 2126 5566 1996 2643 1011 103 103 103 103 2043 2122 2048 2024 1999 4736 1012 102 2066 1996 5499 2375 1010 1996 2002 10024 2594 2375 2036 5105 9615 3378 2007 1996 7819 103 2137 14953 2375 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+[]
+  - place: CUDAPlace(0)
+  - shape: [1, 512]
+  - layout: NCHW
+  - format: undef
+  - dtype: int64_t
+  - data: [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+[]
+  - place: CUDAPlace(0)
+  - shape: [1, 1, 1, 512]
+  - layout: NCHW
+  - format: undef
+  - dtype: float
+  - data: [-0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09]
+[]
+  - place: CUDAPlace(0)
+  - shape: [16]
+  - layout: NCHW
+  - format: undef
+  - dtype: int
+  - data: [1 4 7 10 12 22 31 35 65 69 70 71 72 83 98 100]
+[]
+  - place: CUDAPlace(0)
+  - shape: [16, 1]
+  - layout: NCHW
+  - format: undef
+  - dtype: int64_t
+  - data: [2002 2375 1037 1010 2022 16388 2024 21893 2000 2445 7191 2375 1999 5499 1011 2691]
+[]
+  - place: CUDAPlace(0)
+  - shape: [1, 1]
+  - layout: NCHW
+  - format: undef
+  - dtype: int64_t
+  - data: [0]
+[]
+  - place: CUDAPlace(0)
+  - shape: [1]
+  - layout: NCHW
+  - format: undef
+  - dtype: float
+  - data: [16]
+[]
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 480, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 429, in do_train
+    loss_return = exe.run(main_program,
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1259, in run
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.8/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1247, in run
+    return self._run_impl(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1370, in _run_impl
+    return self._run_parallel(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1062, in _run_parallel
+    tensors = exe.run(fetch_var_names, return_merged)._move_to_list()
+ValueError: (InvalidArgument) Cannot fetch data when using CUDA Graph.
+  [Hint: Expected fetch_tensors.empty() == true, but received fetch_tensors.empty():0 != true:1.] (at /work/Code/Paddle/paddle/fluid/framework/parallel_executor.cc:896)
+
+terminate called after throwing an instance of 'paddle::platform::EnforceNotMet'
+  what():  (External) CUDA error(900), operation not permitted when stream is capturing. 
+  [Hint: 'cudaErrorStreamCaptureUnsupported'. The operation is not permitted when the stream is capturing. ] (at /work/Code/Paddle/paddle/fluid/platform/stream/cuda_stream.cc:92)
+
+
+
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+0   paddle::framework::ParallelExecutor::~ParallelExecutor()
+
+----------------------
+Error Message Summary:
+----------------------
+FatalError: `Process abort signal` is detected by the operating system.
+  [TimeInfo: *** Aborted at 1637317144 (unix time) try "date -d @1637317144" if you are using GNU date ***]
+  [SignalInfo: *** SIGABRT (@0xa29) received by PID 2601 (TID 0x7fa9006b2740) from PID 2601 ***]
+
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=1, device='gpu', enable_addto=False, gradient_merge_steps=67584, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 10:20:11,543] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 10:20:12.486218  2750 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 10:20:12.491822  2750 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+W1119 10:20:27.931906  2750 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 479, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 423, in do_train
+    print(batch[0][input_name[idx]].data)
+AttributeError: 'paddle.fluid.core_avx.LoDTensor' object has no attribute 'data'
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=1, device='gpu', enable_addto=False, gradient_merge_steps=67584, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 10:22:41,593] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 10:22:42.521275  2899 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 10:22:42.527086  2899 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+W1119 10:22:57.768064  2899 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 479, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 428, in do_train
+    loss_return = exe.run(main_program,
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1259, in run
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.8/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1247, in run
+    return self._run_impl(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1370, in _run_impl
+    return self._run_parallel(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1062, in _run_parallel
+    tensors = exe.run(fetch_var_names, return_merged)._move_to_list()
+ValueError: (InvalidArgument) Cannot fetch data when using CUDA Graph.
+  [Hint: Expected fetch_tensors.empty() == true, but received fetch_tensors.empty():0 != true:1.] (at /work/Code/Paddle/paddle/fluid/framework/parallel_executor.cc:896)
+
+terminate called after throwing an instance of 'paddle::platform::EnforceNotMet'
+  what():  (External) CUDA error(900), operation not permitted when stream is capturing. 
+  [Hint: 'cudaErrorStreamCaptureUnsupported'. The operation is not permitted when the stream is capturing. ] (at /work/Code/Paddle/paddle/fluid/platform/stream/cuda_stream.cc:92)
+
+
+
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+0   paddle::framework::ParallelExecutor::~ParallelExecutor()
+
+----------------------
+Error Message Summary:
+----------------------
+FatalError: `Process abort signal` is detected by the operating system.
+  [TimeInfo: *** Aborted at 1637317382 (unix time) try "date -d @1637317382" if you are using GNU date ***]
+  [SignalInfo: *** SIGABRT (@0xb53) received by PID 2899 (TID 0x7f6d7f6f4740) from PID 2899 ***]
+
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=1, device='gpu', enable_addto=False, gradient_merge_steps=67584, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 10:24:23,798] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 10:24:24.730662  3048 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 10:24:24.736527  3048 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+W1119 10:24:39.725481  3048 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfbb0>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfab0>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfa70>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df9f0>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df970>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df930>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df8f0>}
+  - place: CUDAPlace(0)
+  - shape: [1, 512]
+  - layout: NCHW
+  - format: undef
+  - dtype: int64_t
+  - data: [101 103 10024 2594 103 1010 1999 103 5337 3168 103 2089 103 9530 3367 28551 2000 4088 1999 1996 2338 1997 103 1010 3127 2322 1010 2007 1996 2616 2045 103 3423 5784 2040 103 2008 1996 2002 10024 2594 2375 2038 5201 2000 1996 2530 3423 2458 2004 2464 1999 1996 3732 1005 1055 5038 2008 2158 1011 2081 2375 2442 2507 2126 5566 1996 2643 1011 103 103 103 103 2043 2122 2048 2024 1999 4736 1012 102 2066 1996 5499 2375 1010 1996 2002 10024 2594 2375 2036 5105 9615 3378 2007 1996 7819 103 2137 14953 2375 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+[]
+{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfbb0>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfab0>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfa70>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df9f0>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df970>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df930>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df8f0>}
+  - place: CUDAPlace(0)
+  - shape: [1, 512]
+  - layout: NCHW
+  - format: undef
+  - dtype: int64_t
+  - data: [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+[]
+{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfbb0>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfab0>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfa70>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df9f0>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df970>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df930>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df8f0>}
+  - place: CUDAPlace(0)
+  - shape: [1, 1, 1, 512]
+  - layout: NCHW
+  - format: undef
+  - dtype: float
+  - data: [-0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09]
+[]
+{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfbb0>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfab0>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfa70>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df9f0>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df970>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df930>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df8f0>}
+  - place: CUDAPlace(0)
+  - shape: [16]
+  - layout: NCHW
+  - format: undef
+  - dtype: int
+  - data: [1 4 7 10 12 22 31 35 65 69 70 71 72 83 98 100]
+[]
+{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfbb0>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfab0>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfa70>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df9f0>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df970>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df930>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df8f0>}
+  - place: CUDAPlace(0)
+  - shape: [16, 1]
+  - layout: NCHW
+  - format: undef
+  - dtype: int64_t
+  - data: [2002 2375 1037 1010 2022 16388 2024 21893 2000 2445 7191 2375 1999 5499 1011 2691]
+[]
+{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfbb0>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfab0>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfa70>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df9f0>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df970>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df930>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df8f0>}
+  - place: CUDAPlace(0)
+  - shape: [1, 1]
+  - layout: NCHW
+  - format: undef
+  - dtype: int64_t
+  - data: [0]
+[]
+{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfbb0>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfab0>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5dfa70>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df9f0>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df970>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df930>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7ff02b5df8f0>}
+  - place: CUDAPlace(0)
+  - shape: [1]
+  - layout: NCHW
+  - format: undef
+  - dtype: float
+  - data: [16]
+[]
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 481, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 430, in do_train
+    loss_return = exe.run(main_program,
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1259, in run
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.8/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1247, in run
+    return self._run_impl(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1370, in _run_impl
+    return self._run_parallel(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1062, in _run_parallel
+    tensors = exe.run(fetch_var_names, return_merged)._move_to_list()
+ValueError: (InvalidArgument) Cannot fetch data when using CUDA Graph.
+  [Hint: Expected fetch_tensors.empty() == true, but received fetch_tensors.empty():0 != true:1.] (at /work/Code/Paddle/paddle/fluid/framework/parallel_executor.cc:896)
+
+terminate called after throwing an instance of 'paddle::platform::EnforceNotMet'
+  what():  (External) CUDA error(900), operation not permitted when stream is capturing. 
+  [Hint: 'cudaErrorStreamCaptureUnsupported'. The operation is not permitted when the stream is capturing. ] (at /work/Code/Paddle/paddle/fluid/platform/stream/cuda_stream.cc:92)
+
+
+
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+0   paddle::framework::ParallelExecutor::~ParallelExecutor()
+
+----------------------
+Error Message Summary:
+----------------------
+FatalError: `Process abort signal` is detected by the operating system.
+  [TimeInfo: *** Aborted at 1637317484 (unix time) try "date -d @1637317484" if you are using GNU date ***]
+  [SignalInfo: *** SIGABRT (@0xbe8) received by PID 3048 (TID 0x7ff0d8b2c740) from PID 3048 ***]
+
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=1, device='gpu', enable_addto=False, gradient_merge_steps=67584, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 10:26:03,334] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 10:26:04.268690  3197 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 10:26:04.274569  3197 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+W1119 10:26:19.591692  3197 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+['input_ids', 'segment_ids', 'input_mask', 'masked_lm_positions', 'masked_lm_labels', 'next_sentence_labels', 'masked_lm_scale']
+{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfe30>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfd30>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfcf0>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfc70>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfbf0>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfbb0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfb70>}
+  - place: CUDAPlace(0)
+  - shape: [1, 512]
+  - layout: NCHW
+  - format: undef
+  - dtype: int64_t
+  - data: [101 103 10024 2594 103 1010 1999 103 5337 3168 103 2089 103 9530 3367 28551 2000 4088 1999 1996 2338 1997 103 1010 3127 2322 1010 2007 1996 2616 2045 103 3423 5784 2040 103 2008 1996 2002 10024 2594 2375 2038 5201 2000 1996 2530 3423 2458 2004 2464 1999 1996 3732 1005 1055 5038 2008 2158 1011 2081 2375 2442 2507 2126 5566 1996 2643 1011 103 103 103 103 2043 2122 2048 2024 1999 4736 1012 102 2066 1996 5499 2375 1010 1996 2002 10024 2594 2375 2036 5105 9615 3378 2007 1996 7819 103 2137 14953 2375 1012 102 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+[]
+{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfe30>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfd30>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfcf0>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfc70>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfbf0>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfbb0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfb70>}
+  - place: CUDAPlace(0)
+  - shape: [1, 512]
+  - layout: NCHW
+  - format: undef
+  - dtype: int64_t
+  - data: [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+[]
+{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfe30>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfd30>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfcf0>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfc70>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfbf0>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfbb0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfb70>}
+  - place: CUDAPlace(0)
+  - shape: [1, 1, 1, 512]
+  - layout: NCHW
+  - format: undef
+  - dtype: float
+  - data: [-0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -0 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09 -1e+09]
+[]
+{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfe30>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfd30>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfcf0>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfc70>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfbf0>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfbb0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfb70>}
+  - place: CUDAPlace(0)
+  - shape: [16]
+  - layout: NCHW
+  - format: undef
+  - dtype: int
+  - data: [1 4 7 10 12 22 31 35 65 69 70 71 72 83 98 100]
+[]
+{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfe30>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfd30>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfcf0>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfc70>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfbf0>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfbb0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfb70>}
+  - place: CUDAPlace(0)
+  - shape: [16, 1]
+  - layout: NCHW
+  - format: undef
+  - dtype: int64_t
+  - data: [2002 2375 1037 1010 2022 16388 2024 21893 2000 2445 7191 2375 1999 5499 1011 2691]
+[]
+{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfe30>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfd30>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfcf0>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfc70>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfbf0>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfbb0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfb70>}
+  - place: CUDAPlace(0)
+  - shape: [1, 1]
+  - layout: NCHW
+  - format: undef
+  - dtype: int64_t
+  - data: [0]
+[]
+{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfe30>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfd30>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfcf0>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfc70>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfbf0>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfbb0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fe1760bfb70>}
+  - place: CUDAPlace(0)
+  - shape: [1]
+  - layout: NCHW
+  - format: undef
+  - dtype: float
+  - data: [16]
+[]
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 482, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 431, in do_train
+    loss_return = exe.run(main_program,
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1259, in run
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.8/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1247, in run
+    return self._run_impl(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1370, in _run_impl
+    return self._run_parallel(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1062, in _run_parallel
+    tensors = exe.run(fetch_var_names, return_merged)._move_to_list()
+ValueError: (InvalidArgument) Cannot fetch data when using CUDA Graph.
+  [Hint: Expected fetch_tensors.empty() == true, but received fetch_tensors.empty():0 != true:1.] (at /work/Code/Paddle/paddle/fluid/framework/parallel_executor.cc:896)
+
+terminate called after throwing an instance of 'paddle::platform::EnforceNotMet'
+  what():  (External) CUDA error(900), operation not permitted when stream is capturing. 
+  [Hint: 'cudaErrorStreamCaptureUnsupported'. The operation is not permitted when the stream is capturing. ] (at /work/Code/Paddle/paddle/fluid/platform/stream/cuda_stream.cc:92)
+
+
+
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+0   paddle::framework::ParallelExecutor::~ParallelExecutor()
+
+----------------------
+Error Message Summary:
+----------------------
+FatalError: `Process abort signal` is detected by the operating system.
+  [TimeInfo: *** Aborted at 1637317584 (unix time) try "date -d @1637317584" if you are using GNU date ***]
+  [SignalInfo: *** SIGABRT (@0xc7d) received by PID 3197 (TID 0x7fe26cef9740) from PID 3197 ***]
+
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=1, device='gpu', enable_addto=False, gradient_merge_steps=67584, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 10:27:32,010] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 10:27:32.955925  3346 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 10:27:32.961519  3346 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+W1119 10:27:48.532721  3346 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 479, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 428, in do_train
+    loss_return = exe.run(main_program,
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1259, in run
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.8/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1247, in run
+    return self._run_impl(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1370, in _run_impl
+    return self._run_parallel(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1062, in _run_parallel
+    tensors = exe.run(fetch_var_names, return_merged)._move_to_list()
+ValueError: (InvalidArgument) Cannot fetch data when using CUDA Graph.
+  [Hint: Expected fetch_tensors.empty() == true, but received fetch_tensors.empty():0 != true:1.] (at /work/Code/Paddle/paddle/fluid/framework/parallel_executor.cc:896)
+
+terminate called after throwing an instance of 'paddle::platform::EnforceNotMet'
+  what():  (External) CUDA error(900), operation not permitted when stream is capturing. 
+  [Hint: 'cudaErrorStreamCaptureUnsupported'. The operation is not permitted when the stream is capturing. ] (at /work/Code/Paddle/paddle/fluid/platform/stream/cuda_stream.cc:92)
+
+
+
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+0   paddle::framework::ParallelExecutor::~ParallelExecutor()
+
+----------------------
+Error Message Summary:
+----------------------
+FatalError: `Process abort signal` is detected by the operating system.
+  [TimeInfo: *** Aborted at 1637317673 (unix time) try "date -d @1637317673" if you are using GNU date ***]
+  [SignalInfo: *** SIGABRT (@0xd12) received by PID 3346 (TID 0x7fb159c33740) from PID 3346 ***]
+
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=1, device='gpu', enable_addto=False, gradient_merge_steps=67584, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 10:29:00,075] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 10:29:01.037319  3495 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 10:29:01.043025  3495 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f9c6d303a70>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7f9c6d303370>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7f9c6d2ee470>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f9c6d2ee7f0>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7f9c6d2abd70>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f9c6d2ab8f0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f9c6d2aba70>}]
+W1119 10:29:16.295905  3495 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f9c12f3fe70>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7f9c12f3fd70>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7f9c12f3fd30>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f9c12f3fcb0>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7f9c12f3fc30>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f9c12f3fbf0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f9c12f3fbb0>}]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 479, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 428, in do_train
+    loss_return = exe.run(main_program,
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1259, in run
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.8/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1247, in run
+    return self._run_impl(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1370, in _run_impl
+    return self._run_parallel(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1062, in _run_parallel
+    tensors = exe.run(fetch_var_names, return_merged)._move_to_list()
+ValueError: (InvalidArgument) Cannot fetch data when using CUDA Graph.
+  [Hint: Expected fetch_tensors.empty() == true, but received fetch_tensors.empty():0 != true:1.] (at /work/Code/Paddle/paddle/fluid/framework/parallel_executor.cc:896)
+
+terminate called after throwing an instance of 'paddle::platform::EnforceNotMet'
+  what():  (External) CUDA error(900), operation not permitted when stream is capturing. 
+  [Hint: 'cudaErrorStreamCaptureUnsupported'. The operation is not permitted when the stream is capturing. ] (at /work/Code/Paddle/paddle/fluid/platform/stream/cuda_stream.cc:92)
+
+
+
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+0   paddle::framework::ParallelExecutor::~ParallelExecutor()
+
+----------------------
+Error Message Summary:
+----------------------
+FatalError: `Process abort signal` is detected by the operating system.
+  [TimeInfo: *** Aborted at 1637317761 (unix time) try "date -d @1637317761" if you are using GNU date ***]
+  [SignalInfo: *** SIGABRT (@0xda7) received by PID 3495 (TID 0x7f9cbe967740) from PID 3495 ***]
+
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=1, device='gpu', enable_addto=False, gradient_merge_steps=67584, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 10:30:57,502] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 10:30:58.437134  3644 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 10:30:58.443203  3644 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fe0fc498630>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7fe0fc498d30>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7fe0fc4b1870>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fe0fc4b13b0>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7fe0fc4b1630>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fe0fc4b1af0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fe0fc4b18f0>}]
+W1119 10:31:14.032713  3644 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fe09fa7fe30>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7fe09fa7fd30>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7fe09fa7fcf0>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fe09fa7fc70>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7fe09fa7fbf0>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fe09fa7fbb0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fe09fa7fb70>}]
+capture tensor: []
+capture tensor: []
+capture tensor: []
+capture tensor: []
+capture tensor: []
+capture tensor: []
+capture tensor: []
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 479, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 428, in do_train
+    loss_return = exe.run(main_program,
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1259, in run
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.8/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1247, in run
+    return self._run_impl(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1370, in _run_impl
+    return self._run_parallel(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1062, in _run_parallel
+    tensors = exe.run(fetch_var_names, return_merged)._move_to_list()
+ValueError: (InvalidArgument) Cannot fetch data when using CUDA Graph.
+  [Hint: Expected fetch_tensors.empty() == true, but received fetch_tensors.empty():0 != true:1.] (at /work/Code/Paddle/paddle/fluid/framework/parallel_executor.cc:896)
+
+terminate called after throwing an instance of 'paddle::platform::EnforceNotMet'
+  what():  (External) CUDA error(900), operation not permitted when stream is capturing. 
+  [Hint: 'cudaErrorStreamCaptureUnsupported'. The operation is not permitted when the stream is capturing. ] (at /work/Code/Paddle/paddle/fluid/platform/stream/cuda_stream.cc:92)
+
+
+
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+0   paddle::framework::ParallelExecutor::~ParallelExecutor()
+
+----------------------
+Error Message Summary:
+----------------------
+FatalError: `Process abort signal` is detected by the operating system.
+  [TimeInfo: *** Aborted at 1637317879 (unix time) try "date -d @1637317879" if you are using GNU date ***]
+  [SignalInfo: *** SIGABRT (@0xe3c) received by PID 3644 (TID 0x7fe14db59740) from PID 3644 ***]
+
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=3, device='gpu', enable_addto=False, gradient_merge_steps=22528, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 10:31:45,474] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 10:31:46.403450  3799 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 10:31:46.408645  3799 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fed9220e7f0>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7fed92263af0>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7fed92263470>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fed92265bb0>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7fed9221c670>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fed9221ce70>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fed9221c9f0>}]
+W1119 10:32:01.848676  3799 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fed4647ff30>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7fed4647f930>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7fed4647f8f0>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7fed4647f870>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7fed4647f7f0>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fed4647f7b0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7fed4647f770>}]
+capture tensor: []
+capture tensor: []
+capture tensor: []
+capture tensor: []
+capture tensor: []
+capture tensor: []
+capture tensor: []
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 479, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 428, in do_train
+    loss_return = exe.run(main_program,
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1259, in run
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.8/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1247, in run
+    return self._run_impl(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1370, in _run_impl
+    return self._run_parallel(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1062, in _run_parallel
+    tensors = exe.run(fetch_var_names, return_merged)._move_to_list()
+ValueError: (InvalidArgument) Cannot fetch data when using CUDA Graph.
+  [Hint: Expected fetch_tensors.empty() == true, but received fetch_tensors.empty():0 != true:1.] (at /work/Code/Paddle/paddle/fluid/framework/parallel_executor.cc:896)
+
+terminate called after throwing an instance of 'paddle::platform::EnforceNotMet'
+  what():  (External) CUDA error(900), operation not permitted when stream is capturing. 
+  [Hint: 'cudaErrorStreamCaptureUnsupported'. The operation is not permitted when the stream is capturing. ] (at /work/Code/Paddle/paddle/fluid/platform/stream/cuda_stream.cc:92)
+
+
+
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+0   paddle::framework::ParallelExecutor::~ParallelExecutor()
+
+----------------------
+Error Message Summary:
+----------------------
+FatalError: `Process abort signal` is detected by the operating system.
+  [TimeInfo: *** Aborted at 1637317927 (unix time) try "date -d @1637317927" if you are using GNU date ***]
+  [SignalInfo: *** SIGABRT (@0xed7) received by PID 3799 (TID 0x7fedd78d6740) from PID 3799 ***]
+
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=1, device='gpu', enable_addto=False, gradient_merge_steps=67584, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 10:47:46,865] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 10:47:47.790279  3948 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 10:47:47.795887  3948 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f17a6024530>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7f17a603f0b0>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7f17a603fc30>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f17a6058170>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7f17a6058630>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f17a6058530>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f17a60589f0>}]
+W1119 10:48:03.018357  3948 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f17323dfe30>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7f17323dfd30>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7f17323dfcf0>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f17323dfc70>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7f17323dfbf0>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f17323dfbb0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f17323dfb70>}]
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 479, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 428, in do_train
+    loss_return = exe.run(main_program,
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1259, in run
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.8/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1247, in run
+    return self._run_impl(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1370, in _run_impl
+    return self._run_parallel(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1062, in _run_parallel
+    tensors = exe.run(fetch_var_names, return_merged)._move_to_list()
+ValueError: (InvalidArgument) Cannot fetch data when using CUDA Graph.
+  [Hint: Expected fetch_tensors.empty() == true, but received fetch_tensors.empty():0 != true:1.] (at /work/Code/Paddle/paddle/fluid/framework/parallel_executor.cc:896)
+
+terminate called after throwing an instance of 'paddle::platform::EnforceNotMet'
+  what():  (External) CUDA error(900), operation not permitted when stream is capturing. 
+  [Hint: 'cudaErrorStreamCaptureUnsupported'. The operation is not permitted when the stream is capturing. ] (at /work/Code/Paddle/paddle/fluid/platform/stream/cuda_stream.cc:92)
+
+
+
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+0   paddle::framework::ParallelExecutor::~ParallelExecutor()
+
+----------------------
+Error Message Summary:
+----------------------
+FatalError: `Process abort signal` is detected by the operating system.
+  [TimeInfo: *** Aborted at 1637318888 (unix time) try "date -d @1637318888" if you are using GNU date ***]
+  [SignalInfo: *** SIGABRT (@0xf6c) received by PID 3948 (TID 0x7f17fb704740) from PID 3948 ***]
+
+grep: warning: GREP_OPTIONS is deprecated; please use an alias or script
+Namespace(adam_epsilon=1e-06, batch_size=1, device='gpu', enable_addto=False, gradient_merge_steps=67584, input_dir='/ssd2/datasets/bert_wikicorpus/hdf5_lower_case_1_seq_len_512_max_pred_80_masked_lm_prob_0.15_random_seed_12345_dupe_factor_5/wikicorpus_en/', learning_rate=0.0001, logging_steps=10, max_grad_norm=1.0, max_predictions_per_seq=80, max_steps=1000, model_name_or_path='bert-base-uncased', model_type='bert', output_dir='./tmp2/', save_steps=500, scale_loss=1.0, seed=42, use_amp=0, use_cuda_graph=1, use_pure_fp16=0, warmup_steps=10000, weight_decay=0.01)
+[32m[2021-11-19 10:51:05,174] [    INFO][0m - Already cached /root/.paddlenlp/models/bert-base-uncased/bert-base-uncased-vocab.txt[0m
+using FusedTransformerEncoderLayer
+W1119 10:51:06.106238  4097 device_context.cc:451] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.4, Runtime API Version: 11.2
+W1119 10:51:06.112294  4097 device_context.cc:469] device: 0, cuDNN Version: 8.2.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f4fc192d330>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7f4fc1923c70>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7f4fc1923b70>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f4fc1923630>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7f4fc19291b0>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f4fc1929d30>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f4fc1942870>}]
+W1119 10:51:21.177379  4097 build_strategy.cc:122] Currently, fuse_broadcast_ops only works under Reduce mode.
+[{'segment_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f4f52f1fe30>, 'masked_lm_scale': <paddle.fluid.core_avx.LoDTensor object at 0x7f4f52f1fd70>, 'masked_lm_positions': <paddle.fluid.core_avx.LoDTensor object at 0x7f4f52f1fd30>, 'input_ids': <paddle.fluid.core_avx.LoDTensor object at 0x7f4f52f1fcb0>, 'input_mask': <paddle.fluid.core_avx.LoDTensor object at 0x7f4f52f1fc30>, 'masked_lm_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f4f52f1fbf0>, 'next_sentence_labels': <paddle.fluid.core_avx.LoDTensor object at 0x7f4f52f1fbb0>}]
+Traceback (most recent call last):
+  File "./examples/language_model/bert/static/run_pretrain.py", line 478, in <module>
+    do_train(args)
+  File "./examples/language_model/bert/static/run_pretrain.py", line 428, in do_train
+    loss_return = exe.run(main_program,
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1259, in run
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.8/dist-packages/six.py", line 719, in reraise
+    raise value
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1247, in run
+    return self._run_impl(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1370, in _run_impl
+    return self._run_parallel(
+  File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/executor.py", line 1062, in _run_parallel
+    tensors = exe.run(fetch_var_names, return_merged)._move_to_list()
+RuntimeError: In user code:
+
+    File "./examples/language_model/bert/static/run_pretrain.py", line 478, in <module>
+      do_train(args)
+    File "./examples/language_model/bert/static/run_pretrain.py", line 317, in do_train
+      prediction_scores, seq_relationship_score = model(
+    File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/dygraph/layers.py", line 914, in __call__
+      outputs = self.forward(*inputs, **kwargs)
+    File "/usr/local/lib/python3.8/dist-packages/paddlenlp/transformers/bert/modeling.py", line 916, in forward
+      outputs = self.bert(
+    File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/dygraph/layers.py", line 914, in __call__
+      outputs = self.forward(*inputs, **kwargs)
+    File "/usr/local/lib/python3.8/dist-packages/paddlenlp/transformers/bert/modeling.py", line 508, in forward
+      embedding_output = self.embeddings(
+    File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/dygraph/layers.py", line 914, in __call__
+      outputs = self.forward(*inputs, **kwargs)
+    File "/usr/local/lib/python3.8/dist-packages/paddlenlp/transformers/bert/modeling.py", line 56, in forward
+      ones = paddle.ones_like(input_ids, dtype="int64")
+    File "/usr/local/lib/python3.8/dist-packages/paddle/tensor/creation.py", line 306, in ones_like
+      return full_like(x=x, fill_value=1, dtype=dtype, name=name)
+    File "/usr/local/lib/python3.8/dist-packages/paddle/tensor/creation.py", line 222, in full_like
+      helper.append_op(
+    File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/layer_helper.py", line 43, in append_op
+      return self.main_program.current_block().append_op(*args, **kwargs)
+    File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/framework.py", line 3259, in append_op
+      op = Operator(
+    File "/usr/local/lib/python3.8/dist-packages/paddle/fluid/framework.py", line 2305, in __init__
+      for frame in traceback.extract_stack():
+
+    PreconditionNotMetError: Tensor not initialized yet when Tensor::place() is called.
+      [Hint: holder_ should not be null.] (at /work/Code/Paddle/paddle/fluid/framework/tensor.h:210)
+      [operator < fill_any_like > error]
+terminate called after throwing an instance of 'paddle::platform::EnforceNotMet'
+  what():  (External) CUDA error(900), operation not permitted when stream is capturing. 
+  [Hint: 'cudaErrorStreamCaptureUnsupported'. The operation is not permitted when the stream is capturing. ] (at /work/Code/Paddle/paddle/fluid/platform/stream/cuda_stream.cc:92)
+
+
+
+--------------------------------------
+C++ Traceback (most recent call last):
+--------------------------------------
+0   paddle::framework::ParallelExecutor::~ParallelExecutor()
+
+----------------------
+Error Message Summary:
+----------------------
+FatalError: `Process abort signal` is detected by the operating system.
+  [TimeInfo: *** Aborted at 1637319086 (unix time) try "date -d @1637319086" if you are using GNU date ***]
+  [SignalInfo: *** SIGABRT (@0x1001) received by PID 4097 (TID 0x7f5002fe4740) from PID 4097 ***]
+
