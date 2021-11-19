@@ -28,6 +28,7 @@ import distutils.util
 import paddle
 import paddle.distributed.fleet as fleet
 from paddle.io import DataLoader, Dataset
+from paddle.device.cuda.graphs import CUDAGraph
 
 from paddlenlp.utils.tools import TimeCostAverage
 from paddlenlp.transformers import BertForPretraining, BertModel, BertPretrainingCriterion
@@ -154,6 +155,11 @@ def parse_args():
         default=1,
         help="Number of merge steps before gradient update."
         "global_batch_size = gradient_merge_steps * batch_size.")
+    parser.add_argument("--use_cuda_graph",
+        default=False,
+        action='store_true',
+        help="Enable CUDA graph execution.")
+
     args = parser.parse_args()
     return args
 
@@ -337,6 +343,16 @@ def do_train(args):
     paddle.static.set_program_state(main_program, reset_state_dict)
     if args.use_amp:
         optimizer.amp_init(place)
+    
+    # ------------------- use the cuda graph
+    if args.use_cuda_graph:
+        scope = paddle.static.global_scope()
+        for data in data_holders:
+            data.ersistable = True
+        input_tensor_var = [scope.var(input.name).get_tensor() for input in data_holders]    
+        loss.persistable = True
+        graph = None
+        capture_batch_id = 1 
 
     pool = ThreadPoolExecutor(1)
     global_step = 0
@@ -377,9 +393,26 @@ def do_train(args):
                 reader_cost_avg.record(train_reader_cost)
                 global_step += 1
                 train_start = time.time()
-                loss_return = exe.run(main_program,
+
+                if arg.use_cuda_graph:
+                    if graph is not None:
+                       input_tensor_var._copy_from()
+                       graph.replay() 
+                else:
+                    if step == capture_step_id:
+                        batch = None
+                        graph = CUDAGraph(place, mode="global")
+                        graph.capture_begin()
+                    loss_return = exe.run(main_program,
                                       feed=batch,
                                       fetch_list=[loss])
+                    if step == capture_step_id:
+                        graph.capture_end()
+                        graph.replay()
+                else:
+                    loss_return = exe.run(main_program,
+                                      feed=batch,
+                                      fetch_list=[loss])    
                 total_samples += args.batch_size
                 # In the new 2.0 api, must call this function to change the learning_rate
                 lr_scheduler.step()
