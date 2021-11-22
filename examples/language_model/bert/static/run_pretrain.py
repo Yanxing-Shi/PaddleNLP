@@ -345,7 +345,22 @@ def do_train(args):
 
     # Use the fleet api to compile the distributed optimizer
     optimizer = dist_optimizer(args, optimizer)
+
+    # cuda graph
+    scope = paddle.static.global_scope()
+    if args.use_cuda_graph:
+        for data in data_holders:
+            data.persistable = True
+        input_tensor_var = [scope.var(input.name).get_tensor() for input in data_holders]    
+        loss.persistable = True
+        graph = None
+        capture_batch_id = 1
+        
     optimizer.minimize(loss)
+
+    lr_scheduler_var = main_program.global_block().var(lr_scheduler._var_name)
+    lr_scheduler_var.persistable = True
+    lr_scheduler_tensor = scope.var(lr_scheduler_var.name).get_tensor()
 
     # Define the Executor for running the static model
     exe = paddle.static.Executor(place)
@@ -354,19 +369,22 @@ def do_train(args):
 
     # Use the state dict to update the parameter
     reset_state_dict = reset_program_state_dict(model, state_dict)
-    paddle.static.set_program_state(main_program, reset_state_dict)
+    # paddle.static.set_program_state(main_program, reset_state_dict)
     if args.use_amp:
         optimizer.amp_init(place)
     
-    # cuda graph
-    if args.use_cuda_graph:
-        scope = paddle.static.global_scope()
-        for data in data_holders:
-            data.ersistable = True
-        input_tensor_var = [scope.var(input.name).get_tensor() for input in data_holders]    
-        loss.persistable = True
-        graph = None
-        capture_batch_id = 1 
+    # # cuda graph
+    # if args.use_cuda_graph:
+    #     scope = paddle.static.global_scope()
+    #     for data in data_holders:
+    #         data.persistable = True
+    #     input_tensor_var = [scope.var(input.name).get_tensor() for input in data_holders]    
+    #     lr_scheduler_var = main_program.global_block().var(lr_scheduler._var_name)
+    #     lr_scheduler_var.persistable = True
+    #     lr_scheduler_tensor = scope.var(lr_scheduler_var.name).get_tensor()
+    #     loss.persistable = True
+    #     graph = None
+    #     capture_batch_id = 1 
 
     pool = ThreadPoolExecutor(1)
     global_step = 0
@@ -407,27 +425,29 @@ def do_train(args):
                 reader_cost_avg.record(train_reader_cost)
                 global_step += 1
                 train_start = time.time()
-                print(batch)
+                # print(batch)
                 # use cuda graph
                 if args.use_cuda_graph:
                     if graph is not None:
                         input_name = [input.name for input in data_holders]
                         for idx in range(len(input_tensor_var)):
-                            input_tensor_var[idx].set_lod(batch[0][input_name[idx]].lod())
+                            input_tensor_var[idx]._copy_from(batch[0][input_name[idx]], place)
+                        print("replay tensor:",input_tensor_var[0].shape())
                         graph.replay()
                        
                     else:
                         if step == capture_batch_id:
                             input_name = [input.name for input in data_holders]
                             for idx in range(len(input_tensor_var)):
-                                input_tensor_var[idx].set_lod(batch[0][input_name[idx]].lod())
+                                input_tensor_var[idx]._copy_from(batch[0][input_name[idx]], place)
+                            print("input tensor shape:", input_tensor_var[0].shape())
                             batch = None
                             graph = CUDAGraph()
                             graph.capture_begin()
-                        loss_return = exe.run(main_program,
-                                      feed=batch)
+                        loss_return = exe.run(main_program, feed=batch)
                         if step == capture_batch_id:
                             graph.capture_end()
+                            lr_scheduler_tensor.set(np.array([lr_scheduler()], dtype='float32'),place)
                             graph.replay()
                 else:
                     loss_return = exe.run(main_program,
