@@ -131,12 +131,15 @@ class PretrainingDataset(Dataset):
         # store number of  masked tokens in index
         # outputs of torch.nonzero diff with that of numpy.nonzero by zip
         padded_mask_indices = (masked_lm_positions == 0).nonzero()[0]
-        if len(padded_mask_indices) != 0:
-            index = padded_mask_indices[0].item()
-            mask_token_num = index
-        else:
-            index = self.max_pred_length
-            mask_token_num = self.max_pred_length
+        # if len(padded_mask_indices) != 0:
+        #     print("...................")
+        #     index = padded_mask_indices[0].item()
+        #     mask_token_num = index
+        # else:
+        #     index = self.max_pred_length
+        #     mask_token_num = self.max_pred_length
+        index = self.max_pred_length
+        mask_token_num = self.max_pred_length
         # masked_lm_labels = np.full(input_ids.shape, -1, dtype=np.int64)
         # masked_lm_labels[masked_lm_positions[:index]] = masked_lm_ids[:index]
         masked_lm_labels = masked_lm_ids[:index]

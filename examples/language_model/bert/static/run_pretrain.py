@@ -349,9 +349,10 @@ def do_train(args):
     # cuda graph
     scope = paddle.static.global_scope()
     if args.use_cuda_graph:
+        loss_tensor = scope.var(loss.name).get_tensor()
         for data in data_holders:
             data.persistable = True
-        input_tensor_var = [scope.var(input.name).get_tensor() for input in data_holders]    
+        input_tensor_var = [scope.var(input.name).get_tensor() for input in data_holders]
         loss.persistable = True
         graph = None
         capture_batch_id = 1
@@ -431,16 +432,16 @@ def do_train(args):
                     if graph is not None:
                         input_name = [input.name for input in data_holders]
                         for idx in range(len(input_tensor_var)):
+                            # print("replay tensor:", input_name[idx], input_tensor_var[idx].shape())
                             input_tensor_var[idx]._copy_from(batch[0][input_name[idx]], place)
-                        print("replay tensor:",input_tensor_var[0].shape())
                         graph.replay()
                        
                     else:
                         if step == capture_batch_id:
                             input_name = [input.name for input in data_holders]
                             for idx in range(len(input_tensor_var)):
+                                # print("input tensor:", input_name[idx], input_tensor_var[idx].shape())
                                 input_tensor_var[idx]._copy_from(batch[0][input_name[idx]], place)
-                            print("input tensor shape:", input_tensor_var[0].shape())
                             batch = None
                             graph = CUDAGraph()
                             graph.capture_begin()
@@ -459,14 +460,24 @@ def do_train(args):
                 train_run_cost = time.time() - batch_start
                 train_cost_avg.record(train_run_cost)
                 if global_step % args.logging_steps == 0:
-                    print(
-                        "tobal step: %d, epoch: %d, batch: %d, loss: %f, "
-                        "avg_reader_cost: %.5f sec, avg_batch_cost: %.5f sec, avg_samples: %.5f, ips: %.5f sequences/sec"
-                        % (global_step, epoch, step, loss_return[0],
-                           reader_cost_avg.get_average(),
-                           train_cost_avg.get_average(),
-                           total_samples / args.logging_steps, total_samples /
-                           (args.logging_steps * train_cost_avg.get_average())))
+                    if args.use_cuda_graph:
+                        print(
+                            "tobal step: %d, epoch: %d, batch: %d, loss: %f, "
+                            "avg_reader_cost: %.5f sec, avg_batch_cost: %.5f sec, avg_samples: %.5f, ips: %.5f sequences/sec"
+                            % (global_step, epoch, step, np.array(loss_tensor),
+                            reader_cost_avg.get_average(),
+                            train_cost_avg.get_average(),
+                            total_samples / args.logging_steps, total_samples /
+                            (args.logging_steps * train_cost_avg.get_average())))
+                    else:
+                        print(
+                            "tobal step: %d, epoch: %d, batch: %d, loss: %f, "
+                            "avg_reader_cost: %.5f sec, avg_batch_cost: %.5f sec, avg_samples: %.5f, ips: %.5f sequences/sec"
+                            % (global_step, epoch, step, loss_return[0],
+                            reader_cost_avg.get_average(),
+                            train_cost_avg.get_average(),
+                            total_samples / args.logging_steps, total_samples /
+                            (args.logging_steps * train_cost_avg.get_average())))
                     total_samples = 0
                     train_cost_avg.reset()
                     reader_cost_avg.reset()
