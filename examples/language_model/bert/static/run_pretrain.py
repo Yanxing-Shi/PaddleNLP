@@ -440,7 +440,7 @@ def do_train(args):
                         if step == capture_batch_id:
                             input_name = [input.name for input in data_holders]
                             for idx in range(len(input_tensor_var)):
-                                # print("input tensor:", input_name[idx], input_tensor_var[idx].shape())
+                                print("input tensor:", input_name[idx], input_tensor_var[idx].shape())
                                 input_tensor_var[idx]._copy_from(batch[0][input_name[idx]], place)
                             batch = None
                             graph = CUDAGraph()
