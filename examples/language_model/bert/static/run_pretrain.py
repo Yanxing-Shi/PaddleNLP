@@ -155,7 +155,6 @@ def parse_args():
         default=1,
         help="Number of merge steps before gradient update."
         "global_batch_size = gradient_merge_steps * batch_size.")
-    # cuda graph
     parser.add_argument(
         "--use_cuda_graph",
         type=distutils.util.strtobool,
@@ -374,19 +373,6 @@ def do_train(args):
     if args.use_amp:
         optimizer.amp_init(place)
     
-    # # cuda graph
-    # if args.use_cuda_graph:
-    #     scope = paddle.static.global_scope()
-    #     for data in data_holders:
-    #         data.persistable = True
-    #     input_tensor_var = [scope.var(input.name).get_tensor() for input in data_holders]    
-    #     lr_scheduler_var = main_program.global_block().var(lr_scheduler._var_name)
-    #     lr_scheduler_var.persistable = True
-    #     lr_scheduler_tensor = scope.var(lr_scheduler_var.name).get_tensor()
-    #     loss.persistable = True
-    #     graph = None
-    #     capture_batch_id = 1 
-
     pool = ThreadPoolExecutor(1)
     global_step = 0
     tic_train = time.time()
